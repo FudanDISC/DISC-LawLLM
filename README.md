@@ -427,4 +427,8 @@ DISC-LawLLM 可在 Apache 许可证下使用。请查看 [LICENSE 文件](./LICE
 
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=hiyouga/DISC-LawLLM&type=Date)
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=FudanDISC/DISC-LawLLM&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=FudanDISC/DISC-LawLLM&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=FudanDISC/DISC-LawLLM&type=Date" />
+</picture>
