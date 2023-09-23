@@ -1,19 +1,17 @@
-# DISC-LawLLM
-
 <div align="center">
+
+ZH | [EN](./README-en.md)
+
+<h1>DISC-LawLLM</h1>
   
 [![Generic badge](https://img.shields.io/badge/🤗-Huggingface%20Repo-green.svg)](https://huggingface.co/ShengbinYue/DISC-LawLLM)
-[![license](https://img.shields.io/github/license/modelscope/modelscope.svg)](https://github.com/FudanDISC/DISC-LawLLM/blob/main/LICENSE)
-<br>
-</div>
-<div align="center">
+[![license](https://img.shields.io/github/license/modelscope/modelscope.svg)](./LICENSE)
 
 [Demo]() | [技术报告](https://arxiv.org/abs/2309.11325)
-<br>
-中文 | [EN](./README-en.md)
+
 </div>
 
-DISC-LawLLM 是一个旨在为用户提供广泛智能法律服务的法律领域大模型，由[复旦大学数据智能与社会计算实验室 (Fudan-DISC) ](http://fudan-disc.com)开发并开源。
+DISC-LawLLM 是一个旨在为用户提供广泛智能法律服务的法律领域大模型，由[复旦大学数据智能与社会计算实验室 (Fudan-DISC)](http://fudan-disc.com) 开发并开源。
 
 我们将在该项目中开源如下资源：
 * [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（不包括法律问答部分）
@@ -24,7 +22,7 @@ DISC-LawLLM 是一个旨在为用户提供广泛智能法律服务的法律领�
 
 ## 新闻
 
-**[2023/09/25]** DISC-LawLLM v1.0 已正式发布，开源 [DISC-LawLLM-13B 模型](https://huggingface.co/ShengbinYue/DISC-LawLLM)和[DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)。
+**[2023/09/25]** DISC-LawLLM v1.0 已正式发布，开源 [DISC-LawLLM-13B 模型](https://huggingface.co/ShengbinYue/DISC-LawLLM) 和 [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)。
 
 ## 目录
 
@@ -35,8 +33,13 @@ DISC-LawLLM 是一个旨在为用户提供广泛智能法律服务的法律领�
 - [致谢](#致谢)
 - [声明](#声明)
 - [引用](#引用)
+- [协议](#协议)
 
 ## 概述
+
+![Image](./images/model_zh.png)
+
+<p></p>
 
 DISC-LawLLM 是一个为提供专业、智能、全面的法律服务而打造的法律领域大模型，它面向不同人群，能在不同场景下提供帮助，主要有以下几个特点：
 
@@ -48,8 +51,6 @@ DISC-LawLLM 是一个为提供专业、智能、全面的法律服务而打造�
 
 * **高质量的训练数据集和普遍有效的训练范式**
 * **完备的法律模型测评框架和测评数据集**
-
-<div align="center"><img src="https://github.com/FudanDISC/DISC-LawLLM/blob/main/images/model_zh.png" style="width=40%;"/></div>
 
 ### 模型效果演示
 
@@ -143,12 +144,12 @@ DISC-LawLLM 是一个为提供专业、智能、全面的法律服务而打造�
 
 ### 检索增强模块
 
-我们在 DISC-LawLLM 的基础上增加了一个基于开源检索框架 [Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) 的检索模块。我们的知识库目前包括法条库和法考题目库。
+我们在 DISC-LawLLM 的基础上增加了一个基于开源检索框架 [Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) 的检索模块。我们的知识库目前包括法条库和法考题库。
 
 * 法条库包含 800 多部国家地方法律、条例和规定，其中包括《宪法》、《刑法》、《行政诉讼法》、《保险法》、《劳动法》、《著作权法》、《民法典》、《专利法》、《专属经济区和大陆架法》、《中国人民解放军选举全国人民代表大会和县级以上地方各级人民代表大会代表的办法》、《反分裂国家法》、《出境入境边防检查条例》、《国务院关于鼓励台湾同胞投资的规定》、《境内外国人宗教活动管理规定》等。
 * 法考题库包含2.4万道法律相关的考试题目。
 
-在未来，我们会增加更加丰富的知识库。更重要的是我们将进一步深入探索检索增强的 DISC-LawLLM，包括但不限于检索器与 LLM 的联合训练机制，有兴趣可以和我们一起交流。
+在未来，我们会增加更加丰富的知识库。我们还将进一步深入探索检索增强的 DISC-LawLLM，包括但不限于检索器与 LLM 的联合训练机制，各位有兴趣可以与我们一起交流。
 
 ## 推理和部署
 
@@ -423,7 +424,11 @@ DISC-LawLLM 有着目前大语言模型尚无法克服的问题和缺陷，尽�
 }
 ```
 
-## Star History
+## 协议
 
+DISC-LawLLM 可在 Apache 许可证下使用。请查看 [LICENSE 文件](./LICENSE) 获取更多信息。
+
+
+## Star History
 
 ![Star History Chart](https://api.star-history.com/svg?repos=hiyouga/DISC-LawLLM&type=Date)
