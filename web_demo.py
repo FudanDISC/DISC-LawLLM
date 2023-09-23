@@ -13,19 +13,11 @@ st.title("FudanDISC-LawLLM🤖️")
 def init_model():
     model_path = "ShengbinYue/DISC-LawLLM"
     model = AutoModelForCausalLM.from_pretrained(
-        model_path,
-        torch_dtype=torch.float16,
-        device_map="auto",
-        trust_remote_code=True
+        model_path, torch_dtype=torch.float16, device_map="auto", trust_remote_code=True
     )
-    model.generation_config = GenerationConfig.from_pretrained(
-         model_path
-    )
-    
+    model.generation_config = GenerationConfig.from_pretrained(model_path)
     tokenizer = AutoTokenizer.from_pretrained(
-        model_path,
-        use_fast=False,
-        trust_remote_code=True
+        model_path, use_fast=False, trust_remote_code=True
     )
     return model, tokenizer
 
@@ -35,12 +27,12 @@ def clear_chat_history():
 
 
 def init_chat_history():
-    with st.chat_message("assistant", avatar='🤖'):
+    with st.chat_message("assistant", avatar="🤖"):
         st.markdown("您好，我是复旦 DISC-LawLLM，很高兴为您服务💖")
 
     if "messages" in st.session_state:
         for message in st.session_state.messages:
-            avatar = '🙋‍♂️' if message["role"] == "user" else '🤖'
+            avatar = "🙋‍♂️" if message["role"] == "user" else "🤖"
             with st.chat_message(message["role"], avatar=avatar):
                 st.markdown(message["content"])
     else:
@@ -52,12 +44,12 @@ def init_chat_history():
 def main():
     model, tokenizer = init_model()
     messages = init_chat_history()
-    if prompt := st.chat_input("Shift + Enter 换行, Enter 发送"):
-        with st.chat_message("user", avatar='🙋‍♂️'):
+    if prompt := st.chat_input("Shift + Enter 换行，Enter 发送"):
+        with st.chat_message("user", avatar="🙋‍♂️"):
             st.markdown(prompt)
         messages.append({"role": "user", "content": prompt})
         print(f"[user] {prompt}", flush=True)
-        with st.chat_message("assistant", avatar='🤖'):
+        with st.chat_message("assistant", avatar="🤖"):
             placeholder = st.empty()
             for response in model.chat(tokenizer, messages, stream=True):
                 placeholder.markdown(response)
