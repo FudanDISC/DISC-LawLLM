@@ -166,18 +166,14 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.generation.utils import GenerationConfig
 
-tokenizer = AutoTokenizer.from_pretrained(
-    "ShengbinYue/DISC-LawLLM",
-    use_fast=False,
-    trust_remote_code=True,
-)
+model_path = "ShengbinYue/DISC-LawLLM"
 model = AutoModelForCausalLM.from_pretrained(
-    "ShengbinYue/DISC-LawLLM",
-    device_map="auto",
-    torch_dtype=torch.float16,
-    trust_remote_code=True,
+    model_path, torch_dtype=torch.float16, device_map="auto", trust_remote_code=True
 )
-model.generation_config = GenerationConfig.from_pretrained("ShengbinYue/DISC-LawLLM")
+model.generation_config = GenerationConfig.from_pretrained(model_path)
+tokenizer = AutoTokenizer.from_pretrained(
+    model_path, use_fast=False, trust_remote_code=True,
+)
 
 messages = [
     {"role": "user", "content": "生产销售假冒伪劣商品罪如何判刑？"},
