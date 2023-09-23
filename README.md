@@ -16,7 +16,7 @@
 DISC-LawLLM 是一个旨在为用户提供广泛智能法律服务的法律领域大模型，由[复旦大学数据智能与社会计算实验室 (Fudan-DISC) ](http://fudan-disc.com)开发并开源。
 
 我们将在该项目中开源如下资源：
-* [DISC-Law-SFT 数据集](https://huggingface.co/ShengbinYue/DISC-Law-SFT)（不包括法律问答部分）
+* [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（不包括法律问答部分）
 * [DISC-LawLLM 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 * DISC-Law-Eval Benchmark
 
@@ -24,7 +24,7 @@ DISC-LawLLM 是一个旨在为用户提供广泛智能法律服务的法律领�
 
 ## 新闻
 
-**[2023/09/25]** DISC-LawLLM v1.0 已正式发布，开源 DISC-LawLLM-13B 模型和 DISC-Law-SFT 数据集。
+**[2023/09/25]** DISC-LawLLM v1.0 已正式发布，开源 [DISC-LawLLM-13B 模型](https://huggingface.co/ShengbinYue/DISC-LawLLM)和[DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)。
 
 ## 目录
 
@@ -50,7 +50,7 @@ DISC-LawLLM 是一个为提供专业、智能、全面的法律服务而打造�
 * **高质量的训练数据集和普遍有效的训练范式**
 * **完备的法律模型测评框架和测评数据集**
 
-<!-- <div align="center"><img src="https://raw.githubusercontent.com/FudanDISC/DISC-LawLLM/images/model_zh.png" style="width=40%;"/></div> -->
+<div align="center"><img src="https://github.com/FudanDISC/DISC-LawLLM/blob/main/images/model_zh.png" style="width=40%;"/></div>
 
 ### 模型效果演示
 
