@@ -371,17 +371,17 @@ The subjective question dataset is a high-quality test set comprising 300 exampl
 
 We applied the few-shot approach for objective evaluation. The following results represent the accuracy (%) of the models on objective questions. S stands for single-choice questions, and M stands for multiple-choice questions.
 
-|        Model        |  NJE (S)   |  NJE (M)   |  PAE (S)   |  PAE (M)   |  CPA (S)   |  CPA (M)   | UNGEE (S)  | UNGEE (M)  |  PFE (S)   |  LBK (S)   |   Average   |
+|        Model        |  NJE (S)  |  NJE (M)   |  PAE (S)   |  PAE (M)   |  CPA (S)  |  CPA (M)   | UNGEE (S)  | UNGEE (M)  |  PFE (S)   |  LBK (S)   |   Average   |
 |:----------------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 |     ChatGLM      |   31.66   |   1.08    |   27.97   |   2.90    |   37.06   |   13.33   |   39.69   |   20.69   |   37.65   |   42.91   |   24.66   |
 |  Baichuan-Chat   |   31.47   |   10.15   |   29.66   |   8.70    |   35.53   |   19.17   |   50.00   |   27.59   |   53.12   |   53.45   |   30.78   |
 | Chinese-Alpaca-2 |   25.7    |   10.15   |   30.51   |   11.59   |   32.99   |   19.17   |   40.94   |   21.84   |   44.12   |   43.27   |   26.73   |
-|  GPT-3.5-turbo   |   36.50   |   10.58   |   37.29   |   17.03   | **42.12** | **21.67** | **51.25** | **28.74** |   53.53   |   54.18   |   34.10   |
+|  GPT-3.5-turbo   |   36.50   |   10.58   |   37.29   |   17.03   | **42.13** | **21.67** | **51.25** | **28.74** |   53.53   |   54.18   |   34.10   |
 |     LexiLaw      |   20.11   |   7.56    |   23.73   |   10.14   |   24.87   |   19.17   |   31.56   |   16.09   |   31.76   |   40.36   |   21.50   |
 |      LawGPT      |   22.91   |   6.26    |   31.36   |   7.61    |   25.38   |   16.67   |   30.31   |   13.79   |   34.71   |   29.09   |   20.60   |
 |   Lawyer LLaMa   |   35.75   |   5.62    |   32.20   |   6.52    |   29.95   |   13.33   |   32.50   |   14.94   |   39.41   |   39.64   |   25.05   |
 |     ChatLaw      |   27.56   |   7.99    |   31.36   |   9.42    |   35.53   |   11.67   |   35.62   |   17.24   |   42.35   |   41.09   |   25.20   |
-|   DISC-LawLLM    | **42.19** | **19.87** | **40.68** | **18.48** |   39.59   |   19.17   |   50.94   |   25.29   | **57.06** | **54.91** | **37.10** |
+|   DISC-LawLLM    | **42.09** | **19.87** | **40.68** | **18.48** |   39.59   |   19.17   |   50.94   |   25.29   | **57.06** | **54.91** | **37.10** |
 
 The results of subjective evaluation are as follows. Each score is on the scale of 1 to 5.
 
