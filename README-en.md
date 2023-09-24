@@ -77,6 +77,9 @@ In addition to these features, we have made the following contributions during o
 
 ![img3](./images/example_consult_ref.gif)
 
+* Law retrieval
+
+![img3](./images/law_ref.gif)
 
 ### DISC-Law-SFT Dataset
 
