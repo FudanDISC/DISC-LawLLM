@@ -431,7 +431,7 @@ DISC-LawLLM 有着目前大语言模型尚无法克服的问题和缺陷，尽�
 ```
 @misc{yue2023disclawllm,
     title={DISC-LawLLM: Fine-tuning Large Language Models for Intelligent Legal Services}, 
-    author={Shengbin Yue and Wei Chen and Siyuan Wang and Bingxuan Li and Chenchen Shen and Shujun Liu and Yuxuan Zhou and Yao Xiao and Song Yun and Wei Lin and Xuanjing Huang and Zhongyu Wei},
+    author={Shengbin Yue and Wei Chen and Siyuan Wang and Bingxuan Li and Chenchen Shen and Shujun Liu and Yuxuan Zhou and Yao Xiao and Song Yun and Xuanjing Huang and Zhongyu Wei},
     year={2023},
     eprint={2309.11325},
     archivePrefix={arXiv},
