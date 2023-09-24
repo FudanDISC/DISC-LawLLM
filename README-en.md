@@ -57,7 +57,25 @@ In addition to these features, we have made the following contributions during o
 
 ### Demonstration
 
-@Image here
+* Legal Q&A
+
+![img1](./images/example_consult.gif)
+
+* Solving multiple-choice questions in legal exams with retrieval module
+
+![img2](./images/example_exam_ref.gif)
+
+* Legal consultation service with retrieval module
+
+![img3](./images/example_consult_ref.gif)
+
+* Writing documents (divorce property division agreement)
+
+![img4](./images/example_document.gif)
+
+* Tools for legal professionals (legal event detection)
+
+![img5](./images/example_tool.gif)
 
 ### DISC-Law-SFT Dataset
 

@@ -54,7 +54,25 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
 
 ### 模型效果演示
 
-@此处放图
+* 法律问答
+
+![img1](./images/example_consult.gif)
+
+* 带检索模块的法律考试选择题解答
+
+![img2](./images/example_exam_ref.gif)
+
+* 带检索模块的法律咨询服务
+
+![img3](./images/example_consult_ref.gif)
+
+* 文书撰写（离婚财产分割协议）
+
+![img4](./images/example_document.gif)
+
+* 法律专业人员工具（司法事件检测）
+
+![img5](./images/example_tool.gif)
 
 ### DISC-Law-SFT 数据集
 
