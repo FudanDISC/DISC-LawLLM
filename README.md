@@ -70,13 +70,13 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
 
 ![img2](./images/example_exam_ref.gif)
 
-* 带检索的法律咨询
-
-![img3](./images/example_consult_ref.gif)
-
 * 法条检索
 
 ![img3](./images/law_ref.gif)
+
+* 带检索的法律咨询
+
+![img3](./images/example_consult_ref.gif)
 
 ### DISC-Law-SFT 数据集
 
