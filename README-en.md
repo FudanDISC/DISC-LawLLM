@@ -11,7 +11,7 @@
 
 </div>
 
-DISC-LawLLM is a large language model specialized in Chinese legal domain, developed and open-sourced by [Fudan University Data Intelligence and Social Computing Lab (Fudan-DISC)](http://fudan-disc.com) with the aim of providing users with comprehensive intelligent legal services.
+DISC-LawLLM is a large language model specialized in Chinese legal domain, developed and open-sourced by [Fudan University Data Intelligence and Social Computing Lab (Fudan-DISC)](http://fudan-disc.com) , to provide comprehensive intelligent legal services.
 
 We will open-source the following resources in this project:
 * [DISC-Law-SFT dataset](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT) (excluding Q&A data)
