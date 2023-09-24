@@ -7,7 +7,7 @@
 [![Generic badge](https://img.shields.io/badge/🤗-Huggingface%20Repo-green.svg)](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 [![license](https://img.shields.io/github/license/modelscope/modelscope.svg)](./LICENSE)
 
-[Demo]() | [Technical Report](https://arxiv.org/abs/2309.11325)
+[Demo](https://law.fudan-disc.com) | [Technical Report](https://arxiv.org/abs/2309.11325)
 
 </div>
 
@@ -18,7 +18,7 @@ We will open-source the following resources in this project:
 * [DISC-LawLLM model weights](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 * DISC-Law-Eval Benchmark 
 
-You can experience our DISC-LawLLM [online]().
+You can experience our DISC-LawLLM [online](https://law.fudan-disc.com).
 
 ## News
 
