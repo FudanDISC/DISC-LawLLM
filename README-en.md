@@ -57,25 +57,26 @@ In addition to these features, we have made the following contributions during o
 
 ### Demonstration
 
-* Legal Q&A
+* Legal consultation
 
 ![img1](./images/example_consult.gif)
 
-* Solving multiple-choice questions in legal exams with retrieval module
-
-![img2](./images/example_exam_ref.gif)
-
-* Legal consultation service with retrieval module
-
-![img3](./images/example_consult_ref.gif)
-
-* Writing documents (divorce property division agreement)
+* Agreement writing
 
 ![img4](./images/example_document.gif)
 
-* Tools for legal professionals (legal event detection)
+* Professional judicial tools
 
 ![img5](./images/example_tool.gif)
+
+* Examination Assistant
+
+![img2](./images/example_exam_ref.gif)
+
+* Legal consultation with retrieval module
+
+![img3](./images/example_consult_ref.gif)
+
 
 ### DISC-Law-SFT Dataset
 
@@ -437,7 +438,7 @@ If our project has been helpful for your research and work, please kindly cite o
 ```
 @misc{yue2023disclawllm,
     title={DISC-LawLLM: Fine-tuning Large Language Models for Intelligent Legal Services}, 
-    author={Shengbin Yue and Wei Chen and Siyuan Wang and Bingxuan Li and Chenchen Shen and Shujun Liu and Yuxuan Zhou and Yao Xiao and Song Yun and Wei Lin and Xuanjing Huang and Zhongyu Wei},
+    author={Shengbin Yue and Wei Chen and Siyuan Wang and Bingxuan Li and Chenchen Shen and Shujun Liu and Yuxuan Zhou and Yao Xiao and Song Yun and Xuanjing Huang and Zhongyu Wei},
     year={2023},
     eprint={2309.11325},
     archivePrefix={arXiv},
