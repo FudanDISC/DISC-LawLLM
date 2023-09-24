@@ -217,9 +217,7 @@ python cli_demo.py
 streamlit run web_demo.py --server.port 8888
 ```
 
-### 部署
-
-目前版本的 DISC-LawLLM 是以 Baichuan-13B 作为基座的，您可以参照 [Baichuan-13B](https://github.com/baichuan-inc/Baichuan-13B) 的介绍来进行 int8 或 int4 量化推理部署以及CPU部署。
+此外，目前版本的 DISC-LawLLM 是以 Baichuan-13B 作为基座的，您可以参照 [Baichuan-13B](https://github.com/baichuan-inc/Baichuan-13B) 的介绍来进行 int8 或 int4 量化推理部署以及CPU部署。
 
 ## 模型微调
 
