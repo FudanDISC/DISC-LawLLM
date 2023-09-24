@@ -18,7 +18,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 * [DISC-LawLLM 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 * DISC-Law-Eval Benchmark
 
-您可以通过访问这个[链接]()来在线体验我们的 DISC-LawLLM。
+您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
 ## 新闻
 
