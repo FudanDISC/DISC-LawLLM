@@ -95,7 +95,7 @@ Intelligent applications in Chinese legal domain under different scenarios often
     <th>Scenario</th>
   </tr>
   <tr>
-    <td rowspan="10">DISC-LawLLM-SFT-Pair</td>
+    <td rowspan="10">DISC-Law-SFT-Pair</td>
     <td>Legal information extraction</td>
     <td>32K</td>
     <td rowspan="7">Legal professional assistant</td>
@@ -139,7 +139,7 @@ Intelligent applications in Chinese legal domain under different scenarios often
     <td>12K</td>
   </tr>
   <tr>
-    <td rowspan="2">DISC-LawLLM-SFT-Triple</td>
+    <td rowspan="2">DISC-Law-SFT-Triple</td>
     <td>Legal judgement prediction</td>
     <td>16K</td>
     <td>Legal professional assistant</td>

@@ -92,7 +92,7 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
     <th>对应情境</th>
   </tr>
   <tr>
-    <td rowspan="10">DISC-LawLLM-SFT-Pair</td>
+    <td rowspan="10">DISC-Law-SFT-Pair</td>
     <td>司法要素提取</td>
     <td>32K</td>
     <td rowspan="7">法律专业人员助手</td>
@@ -136,7 +136,7 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
     <td>12K</td>
   </tr>
   <tr>
-    <td rowspan="2">DISC-LawLLM-SFT-Triple</td>
+    <td rowspan="2">DISC-Law-SFT-Triple</td>
     <td>判决预测</td>
     <td>16K</td>
     <td>法律专业人员助手</td>
