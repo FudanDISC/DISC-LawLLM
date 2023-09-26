@@ -139,7 +139,7 @@ Intelligent applications in Chinese legal domain under different scenarios often
     <td>12K</td>
   </tr>
   <tr>
-    <td rowspan="2">DISC-Law-SFT-Triple</td>
+    <td rowspan="2">DISC-Law-SFT-Triplet</td>
     <td>Legal judgement prediction</td>
     <td>16K</td>
     <td>Legal professional assistant</td>
@@ -451,7 +451,7 @@ If our project has been helpful for your research and work, please kindly cite o
 
 ## License
 
-DISC-LawLLM is available under the Apache License. See the [LICENSE file](./LICENSE) for more information.
+DISC-LawLLM is available under the Apache License. See the [LICENSE](./LICENSE) file for more information.
 
 
 ## Star History

@@ -43,7 +43,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 
 DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系统，它面向不同群体，能在不同应用场景下提供帮助，主要有以下几个特点：
 
-* **法律文本处理能力：** 针对法律语言的理解与生成能力，包括信息抽取、文本摘要等，我们基于现有的NLP司法任务公开数据和真实世界的法律相关文本进行了微调数据的构建。
+* **法律文本处理能力：** 针对法律语言的理解与生成能力，包括信息抽取、文本摘要等，我们基于现有的 NLP 司法任务公开数据和真实世界的法律相关文本进行了微调数据的构建。
 * **法律推理思维能力：** 针对智慧司法领域任务的需求，我们使用法律三段论这一法理推理理论设计了指令数据，有效地提高了模型的法理推理能力。
 * **司法领域知识遵循能力：** 我们为智能法律处理系统配备了检索增强的模块，增强了系统对于背景知识的的检索和遵循能力。
 
@@ -80,7 +80,7 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
 
 ### DISC-Law-SFT 数据集
 
-不同场景下的法律智能应用通常需要结合法律文本理解和生成的多种基本能力。为此，我们构建了一个高质量的监督微调数据集 DISC-Law-SFT，包括法律信息提取、判决预测、文档摘要和法律问题解答，确保覆盖不同司法应用场景。DISC-Law-SFT包括两个子集，即DISC-Law-SFT-Pair 和 DISC-Law-SFT-Triplet。前者旨在为 LLM 引入法律推理能力，后者则有助于提高模型利用外部知识的能力，具体的构建细节请参照我们的[技术报告](https://arxiv.org/abs/2309.11325)。数据集的分布如下所示：
+不同场景下的法律智能应用通常需要结合法律文本理解和生成的多种基本能力。为此，我们构建了一个高质量的监督微调数据集 DISC-Law-SFT，包括法律信息提取、判决预测、文档摘要和法律问题解答，确保覆盖不同司法应用场景。DISC-Law-SFT 包括两个子集，即 DISC-Law-SFT-Pair 和 DISC-Law-SFT-Triplet。前者旨在为 LLM 引入法律推理能力，后者则有助于提高模型利用外部知识的能力，具体的构建细节请参照我们的[技术报告](https://arxiv.org/abs/2309.11325)。数据集的分布如下所示：
 
 <img src="" alt="" width=""/>
 
@@ -136,7 +136,7 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
     <td>12K</td>
   </tr>
   <tr>
-    <td rowspan="2">DISC-Law-SFT-Triple</td>
+    <td rowspan="2">DISC-Law-SFT-Triplet</td>
     <td>判决预测</td>
     <td>16K</td>
     <td>法律专业人员助手</td>
@@ -169,7 +169,7 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
 我们在 DISC-LawLLM 的基础上增加了一个基于开源检索框架 [Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat) 的检索模块。我们的知识库目前包括法条库和法考题库。
 
 * 法条库包含 800 多部国家地方法律、条例和规定，其中包括《宪法》、《刑法》、《行政诉讼法》、《保险法》、《劳动法》、《著作权法》、《民法典》、《专利法》、《专属经济区和大陆架法》、《中国人民解放军选举全国人民代表大会和县级以上地方各级人民代表大会代表的办法》、《反分裂国家法》、《出境入境边防检查条例》、《国务院关于鼓励台湾同胞投资的规定》、《境内外国人宗教活动管理规定》等。
-* 法考题库包含2.4万道法律相关的考试题目。
+* 法考题库包含 2.4 万道法律相关的考试题目。
 
 在未来，我们会增加更加丰富的知识库。我们还将进一步深入探索检索增强的 DISC-LawLLM，包括但不限于检索器与 LLM 的联合训练机制，各位有兴趣可以与我们一起交流。
 
@@ -217,11 +217,11 @@ python cli_demo.py
 streamlit run web_demo.py --server.port 8888
 ```
 
-此外，目前版本的 DISC-LawLLM 是以 Baichuan-13B 作为基座的，您可以参照 [Baichuan-13B](https://github.com/baichuan-inc/Baichuan-13B) 的介绍来进行 int8 或 int4 量化推理部署以及CPU部署。
+此外，目前版本的 DISC-LawLLM 是以 Baichuan-13B 作为基座的，您可以参照 [Baichuan-13B](https://github.com/baichuan-inc/Baichuan-13B) 的介绍来进行 int8 或 int4 量化推理部署以及 CPU 部署。
 
 ## 模型微调
 
-开发者可以对 DISC-LawLLM 进行微调使用。在此可以参照与 DISC-LawLLM 兼容的微调工具 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 或是我们的 [DISC-MedLLM](https://github.com/FudanDISC/DISC-MedLLM) 医疗大模型。我们以 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 为例给出**全量**和  **LoRA** 两种微调实例。
+开发者可以对 DISC-LawLLM 进行微调使用。在此可以参照与 DISC-LawLLM 兼容的微调工具 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 或是我们的 [DISC-MedLLM](https://github.com/FudanDISC/DISC-MedLLM) 医疗大模型。我们以 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 为例给出**全量**和 **LoRA** 两种微调示例。
 
 首先，下载 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 并按其要求[安装依赖](https://github.com/hiyouga/LLaMA-Efficient-Tuning#getting-started)。注意训练数据按照项目中的要求进行处理。下面我们给出两种微调场景下的脚本样例。
 
@@ -383,7 +383,7 @@ torchrun --nproc_per_node 4 src/train_bash.py \
 
 ### 评测结果
 
-客观题评测结果(%)如下（采用 few-shot 的方式）。
+客观题评测采用 few-shot 方式，结果（%）如下：
 
 |        模型        |  NJE 单选   |  NJE 多选   |  PAE 单选   |  PAE 多选   |  CPA 单选   |  CPA 多选   | UNGEE 单选  | UNGEE 多选  |  PFE 单选   |  LBK 单选   |   平均   |
 |:----------------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
@@ -397,7 +397,7 @@ torchrun --nproc_per_node 4 src/train_bash.py \
 |     ChatLaw      |   27.56   |   7.99    |   31.36   |   9.42    |   35.53   |   11.67   |   35.62   |   17.24   |   42.35   |   41.09   |   25.20   |
 |   DISC-LawLLM    | **42.09** | **19.87** | **40.68** | **18.48** |   39.59   |   19.17   |   50.94   |   25.29   | **57.06** | **54.91** | **37.10** |
 
-主观题评测结果如下，每个分数为 1-5。
+主观题评测分数为 1-5，结果如下：
 
 |        模型        | 准确性  | 完整性  | 清晰性  |  平均  |
 |:----------------:|:----:|:----:|:----:|:----:|
@@ -442,7 +442,7 @@ DISC-LawLLM 有着目前大语言模型尚无法克服的问题和缺陷，尽�
 
 ## 协议
 
-DISC-LawLLM 可在 Apache 许可证下使用。请查看 [LICENSE 文件](./LICENSE) 获取更多信息。
+DISC-LawLLM 可在 Apache 许可证下使用。请查看 [LICENSE](./LICENSE) 文件获取更多信息。
 
 
 ## Star History
