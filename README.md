@@ -16,7 +16,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 我们将在该项目中开源如下资源：
 * [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（不包括法律问答部分）
 * [DISC-LawLLM 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM)
-* DISC-Law-Eval Benchmark (on-going)
+* DISC-Law-Eval Benchmark (即将发布)
 
 您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
