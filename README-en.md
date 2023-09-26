@@ -16,7 +16,7 @@ DISC-LawLLM is a large language model specialized in Chinese legal domain, devel
 We will open-source the following resources in this project:
 * [DISC-Law-SFT dataset](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT) (excluding Q&A data)
 * [DISC-LawLLM model weights](https://huggingface.co/ShengbinYue/DISC-LawLLM)
-* DISC-Law-Eval Benchmark 
+* DISC-Law-Eval Benchmark (to be released soon)
 
 You can experience our DISC-LawLLM [online](https://law.fudan-disc.com).
 
@@ -53,33 +53,31 @@ In addition to these features, we have made the following contributions during o
 * **High-Quality training datasets and universally effective training paradigms**
 * **Comprehensive Chinese legal model evaluation framework and evalution datasets**
 
-<!-- <div align="center"><img src="https://raw.githubusercontent.com/FudanDISC/DISC-LawLLM/images/model_zh.png" style="width=40%;"/></div> -->
-
 ### Demonstration
 
-* Legal consultation
+#### Legal consultation
 
-![img1](./images/example_consult.gif)
+![consult_demo](./images/example_consult.gif)
 
-* Agreement writing
+#### Agreement writing
 
-![img4](./images/example_document.gif)
+![document_demo](./images/example_document.gif)
 
-* Professional judicial tools
+#### Professional judicial tools
 
-![img5](./images/example_tool.gif)
+![tool_demo](./images/example_tool.gif)
 
-* Examination Assistant
+#### Examination Assistant
 
-![img2](./images/example_exam_ref.gif)
+![exam_ref_demo](./images/example_exam_ref.gif)
 
-* Law retrieval
+#### Law retrieval
 
-![img3](./images/law_ref.gif)
+![law_ref_demo](./images/example_law_ref.gif)
 
-* Legal consultation with retrieval module
+#### Legal consultation with retrieval module
 
-![img3](./images/example_consult_ref.gif)
+![consult_ref_demo](./images/example_consult_ref.gif)
 
 ### DISC-Law-SFT Dataset
 
@@ -326,7 +324,7 @@ torchrun --nproc_per_node 4 src/train_bash.py \
 
 ## DISC-Law-Eval-Benchmark
 
-Inspired by the composition of judicial examinations, we developed a fair and comprehensive evaluation framework called DISC-Law-Eval Benchmark. This framework assesses the performance of LLMs in Chinese legal domain from both objective and subjective perspectives. Our DISC-Law-Eval-Benchmark is available through this [link](https://github.com/FudanDISC/DISC-LawLLM/evl).
+Inspired by the composition of judicial examinations, we developed a fair and comprehensive evaluation framework called DISC-Law-Eval Benchmark. This framework assesses the performance of LLMs in Chinese legal domain from both objective and subjective perspectives. Our DISC-Law-Eval Benchmark is available through this [link](./eval) (to be released soon).
 
 ### Objective Evaluation
 

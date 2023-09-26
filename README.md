@@ -16,7 +16,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 我们将在该项目中开源如下资源：
 * [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（不包括法律问答部分）
 * [DISC-LawLLM 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM)
-* DISC-Law-Eval Benchmark (即将发布)
+* DISC-Law-Eval Benchmark（即将发布）
 
 您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
@@ -54,29 +54,29 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
 
 ### 模型效果演示
 
-* 法律咨询
+#### 法律咨询
 
-![img1](./images/example_consult.gif)
+![consult_demo](./images/example_consult.gif)
 
-* 协议撰写
+#### 协议撰写
 
-![img4](./images/example_document.gif)
+![document_demo](./images/example_document.gif)
 
-* 司法专业工具
+#### 司法专业工具
 
-![img5](./images/example_tool.gif)
+![tool_demo](./images/example_tool.gif)
 
-* 考试助手
+#### 考试助手
 
-![img2](./images/example_exam_ref.gif)
+![exam_ref_demo](./images/example_exam_ref.gif)
 
-* 法条检索
+#### 法条检索
 
-![img3](./images/law_ref.gif)
+![law_ref_demo](./images/example_law_ref.gif)
 
-* 带检索的法律咨询
+#### 带检索的法律咨询
 
-![img3](./images/example_consult_ref.gif)
+![consult_ref_demo](./images/example_consult_ref.gif)
 
 ### DISC-Law-SFT 数据集
 
@@ -320,7 +320,7 @@ torchrun --nproc_per_node 4 src/train_bash.py \
 
 ## DISC-Law-Eval-Benchmark
 
-受司法考试构成的启发，我们开发了一个公平的评估框架 —— DISC-Law-Eval Benchmark，从客观和主观两个角度对法律大语言模型的性能进行评估，以考察模型在中国法律领域的性能。您可以可以点击此[链接](https://github.com/FudanDISC/DISC-LawLLM/evl)使用我们的 DISC-Law-Eval-Benchmark。
+受司法考试构成的启发，我们开发了一个公平的评估框架 —— DISC-Law-Eval Benchmark，从客观和主观两个角度对法律大语言模型的性能进行评估，以考察模型在中国法律领域的性能。您可以点击此[链接](./eval)使用我们的 DISC-Law-Eval-Benchmark（即将发布）。
 
 ### 客观评测
 
