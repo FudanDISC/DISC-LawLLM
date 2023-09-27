@@ -51,7 +51,7 @@ DISC-LawLLM is a large language model designed to provide professional, intellig
 In addition to these features, we have made the following contributions during our research behind DISC-LawLLM:
 
 * **High-Quality training datasets and universally effective training paradigms**
-* **Comprehensive Chinese legal model evaluation framework and evalution datasets**
+* **Comprehensive Chinese legal model evaluation framework and evaluation datasets**
 
 ### Demonstration
 
