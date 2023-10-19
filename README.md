@@ -22,6 +22,8 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 
 ## 新闻
 
+**[2023/10/19]** 🎉🎉🎉 我们开源了DISC-Law-Eval Benchmark 中的[评测数据](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data)（包括标准答案）。🎉🎉🎉
+
 **[2023/09/26]** DISC-LawLLM v1.0 已正式发布，开源 [DISC-LawLLM-13B 模型](https://huggingface.co/ShengbinYue/DISC-LawLLM) 和 [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)。
 
 ## 目录
@@ -375,11 +377,15 @@ torchrun --nproc_per_node 4 src/train_bash.py \
   </tr>
 </table>
 
+**你可以在这里查看我们的[客观评测集](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data/objective_eval)**
+
 ### 主观评测
 
 在主观评测部分，我们采用问答题形式进行评估，模拟主观考试问题的过程。我们从法律咨询、在线论坛、与司法相关的出版物和法律文件中手工构建了一个高质量的测试集。我们用 GPT-3.5 Turbo 作为裁判模型来评估模型的输出，并基于标准答案用准确性、完整性和清晰度这三个标准提供 1-5 的评分。
 
 主观题数据集从来源于法律咨询、网上发帖、司法相关出版物和法律文书中手动构建的一个高质量的测试集，其中包括 300 个示例，涵盖了法律知识问答、法律咨询和判决预测等场景。
+
+**你可以在这里查看我们的[主观评测集](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data/subjective_eval)**
 
 ### 评测结果
 
