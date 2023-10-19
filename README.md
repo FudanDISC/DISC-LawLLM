@@ -22,7 +22,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 
 ## 新闻
 
-**[2023/10/19]** 🎉🎉🎉 我们开源了DISC-Law-Eval Benchmark 中的[评测数据](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data)（包括标准答案）。🎉🎉🎉
+**[2023/10/19]**  🎉🎉🎉 我们开源了DISC-Law-Eval Benchmark 中的[评测数据](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data)（包括标准答案）🎉🎉🎉
 
 **[2023/09/26]** DISC-LawLLM v1.0 已正式发布，开源 [DISC-LawLLM-13B 模型](https://huggingface.co/ShengbinYue/DISC-LawLLM) 和 [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)。
 
