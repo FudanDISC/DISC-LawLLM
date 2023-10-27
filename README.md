@@ -450,7 +450,6 @@ DISC-LawLLM 有着目前大语言模型尚无法克服的问题和缺陷，尽�
 
 DISC-LawLLM 可在 Apache 许可证下使用。请查看 [LICENSE](./LICENSE) 文件获取更多信息。
 
-
 ## Star History
 
 <picture>
