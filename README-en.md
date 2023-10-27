@@ -11,16 +11,20 @@
 
 </div>
 
-DISC-LawLLM is a large language model specialized in Chinese legal domain, developed and open-sourced by [Fudan University Data Intelligence and Social Computing Lab (Fudan-DISC)](http://fudan-disc.com) , to provide comprehensive intelligent legal services.
+DISC-LawLLM is a large language model specialized in Chinese legal domain, developed and open-sourced by [Fudan University Data Intelligence and Social Computing Lab (Fudan-DISC)](http://fudan-disc.com), to provide comprehensive intelligent legal services.
 
 We will open-source the following resources in this project:
 * [DISC-Law-SFT dataset](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT) (excluding Q&A data)
 * [DISC-LawLLM model weights](https://huggingface.co/ShengbinYue/DISC-LawLLM)
-* DISC-Law-Eval Benchmark (to be released soon)
+* [DISC-Law-Eval Benchmark](./eval/)
 
 You can experience our DISC-LawLLM [online](https://law.fudan-disc.com).
 
 ## News
+
+**[2023/??/??]** 🎉 We have open sourced the evaluation scripts of our DISC-Law-Eval Benchmark. You can view more details [here](./eval/README.md).
+
+**[2023/10/19]** We have open sourced the [evaluation datasets](./eval/datasets/) (including reference outputs) of our DISC-Law-Eval Benchmark.
 
 **[2023/09/25]** DISC-LawLLM v1.0 has been officially released, with the [DISC-LawLLM-13B model weights](https://huggingface.co/ShengbinYue/DISC-LawLLM) and the [DISC-Law-SFT dataset](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT) made open source.
 
@@ -324,13 +328,13 @@ torchrun --nproc_per_node 4 src/train_bash.py \
 
 ## DISC-Law-Eval-Benchmark
 
-Inspired by the composition of judicial examinations, we developed a fair and comprehensive evaluation framework called DISC-Law-Eval Benchmark. This framework assesses the performance of LLMs in Chinese legal domain from both objective and subjective perspectives. Our DISC-Law-Eval Benchmark is available through this [link](./eval) (to be released soon).
+Inspired by the composition of judicial examinations, we developed a fair and comprehensive evaluation framework called DISC-Law-Eval Benchmark. This framework assesses the performance of LLMs in Chinese legal domain from both objective and subjective perspectives. More details about our DISC-Law-Eval Benchmark is available [here](./eval/README-en.md). We have also a Python package for **M**ultilevel **L**egal **LLM** called [ml3m](https://github.com/Charlie-XIAO/ml3m) with documentation available [here](https://charlie-xiao.github.io/ml3m/).
 
 ### Objective Evaluation
 
 *Note: Throughout this project, we will use the term "single-choice question" to represent "multiple choice question with single correct option", and the term "multiple-choice question" to represent only "multiple-choice question with more than one correct options".*
 
-In order to objectively and quantitatively evaluate Chinese legal knowledge and reasoning abilities of LLMs in Chinese legal domain, the objective evaluation dataset consists of a series of single-choice and multiple-choice questions from standardized Chinese judicial examinations and legal knowledge competitions. These questions are categorized into three levels of difficulty: hard, medium, and easy, based on contextual and deductive complexity. This dataset provides a more challenging and reliable way to measure whether a model can utilize its knowledge in Chinese legal domain to deduce correct answers. Performance is demonstrated through accuracy computations. Details are revealed as follows:
+In order to objectively and quantitatively evaluate Chinese legal knowledge and reasoning abilities of LLMs in Chinese legal domain, the objective evaluation dataset consists of a series of single-choice and multiple-choice questions from standardized Chinese judicial examinations and legal knowledge competitions. These questions are categorized into three levels of difficulty: hard, medium, and easy, based on contextual and deductive complexity. This dataset provides a more challenging and reliable way to measure whether a model can utilize its knowledge in Chinese legal domain to deduce correct answers. The chosen options are extracted from the model responses by [a delicate set of regular expressions](./eval/src/eval.py#L5), compared with the standard solutions, and the performance is determined by the percentage of correctly-answered questions. You can check [here](./eval/datasets/objective/) for our objective evaluation datasets. Details are revealed as follows:
 
 <table>
   <tr>
@@ -383,9 +387,9 @@ In order to objectively and quantitatively evaluate Chinese legal knowledge and 
 
 ### Subjective Evaluation
 
-For subjective evaluation, we assess the LLMs in the question-answering format to simulate the process of subjective examination. We have manually constructed a high-quality test set by sourcing data from legal consultations, online forums, judicial-related publications, and Chinese judicial documents. We use GPT-3.5 Turbo as the referee model to evaluate the model's outputs and provide scores ranging from 1 to 5 based on three criteria: accuracy, completeness, and clarity with respect to standard answers.
+For subjective evaluation, we assess the LLMs in the question-answering format to simulate the process of subjective examination. We have manually constructed a high-quality test set by sourcing data from legal consultations, online forums, judicial-related publications, and Chinese judicial documents. We use GPT-3.5 Turbo as the referee model to evaluate the model's outputs and provide scores ranging from 1 to 5 based on three criteria: accuracy, completeness, and clarity with respect to standard answers. Details of these criteria can be found in the [ml3m documentation](https://charlie-xiao.github.io/ml3m/modules/ml3m.qa.html#ml3m.qa.QaOpenAIEvaluator).
 
-The subjective question dataset is a high-quality test set comprising 300 examples. It covers various scenarios, including legal knowledge Q&A, legal consultations, and legal judgment predictions. These examples are manually curated from legal consultations, online posts, judicial-related publications, and legal documents.
+The subjective evaluation dataset is a high-quality test set comprising 300 examples. It covers various scenarios, including legal knowledge QA, legal consultations, and legal judgment predictions. These examples are manually curated from legal consultations, online posts, judicial-related publications, and legal documents. You can check [here](./eval/datasets/subjective/) for our subjective evaluation datasets.
 
 ### Evaluation Results
 
