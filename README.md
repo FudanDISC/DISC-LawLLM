@@ -16,13 +16,15 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 我们将在该项目中开源如下资源：
 * [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（不包括法律问答部分）
 * [DISC-LawLLM 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM)
-* DISC-Law-Eval Benchmark
+* [DISC-Law-Eval Benchmark](./eval/)
 
 您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
 ## 新闻
 
-**[2023/10/19]**  🎉🎉🎉 我们开源了DISC-Law-Eval Benchmark 中的[评测数据](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data)（包括标准答案）🎉🎉🎉
+**[2023/??/??]** 🎉 我们开源了 DISC-Law-Eval Benchmark 的评测代码，更多详情请在[此处](./eval/README.md)查看。
+
+**[2023/10/19]** 我们开源了 DISC-Law-Eval Benchmark 中的[评测数据集](./eval/datasets/)（包括标准答案）。
 
 **[2023/09/26]** DISC-LawLLM v1.0 已正式发布，开源 [DISC-LawLLM-13B 模型](https://huggingface.co/ShengbinYue/DISC-LawLLM) 和 [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)。
 
@@ -164,7 +166,7 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
   </tr>
 </table>
 
-我们总共发布了近30万条训练数据，其中包括 DISC-Law-SFT-Pair 和DISC-Law-SFT-Triplet。您可以访问这个[链接](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)下载数据集。
+我们总共发布了近30万条训练数据，其中包括 DISC-Law-SFT-Pair 和 DISC-Law-SFT-Triplet。您可以访问这个[链接](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)下载数据集。
 
 ### 检索增强模块
 
@@ -322,11 +324,11 @@ torchrun --nproc_per_node 4 src/train_bash.py \
 
 ## DISC-Law-Eval-Benchmark
 
-受司法考试构成的启发，我们开发了一个公平的评估框架 —— DISC-Law-Eval Benchmark，从客观和主观两个角度对法律大语言模型的性能进行评估，以考察模型在中国法律领域的性能。您可以点击此[链接](./eval)使用我们的 DISC-Law-Eval-Benchmark（即将发布）。
+受司法考试构成的启发，我们开发了一个公平的评估框架 —— DISC-Law-Eval Benchmark，从客观和主观两个角度对法律大语言模型的性能进行评估，以考察模型在中国法律领域的性能。您可以点击在[这里](./eval/README.md)查看 DISC-Law-Eval Benchmark 的更多详情。我们还开发了名为 [ml3m](https://github.com/Charlie-XIAO/ml3m) 的 Python 套件，取自 **M**ultilevel **L**egal **LLM**。您可以在[这里](https://charlie-xiao.github.io/)查看其技术文档。
 
 ### 客观评测
 
-为了客观、定量地评估智能法律系统的法律知识和推理能力，客观的评价数据集由一系列中国法律标准化考试和知识竞赛的单项和多项选择题组成，并根据内容复杂性和演绎难度，将问题分为困难、中等和简单三个层次。它可以提供一个更具挑战性和可靠的方法来衡量模型是否可以利用其知识来推理正确的答案。我们通过计算精度来表明性能。具体构成如下：
+为了客观、定量地评估智能法律系统的法律知识和推理能力，客观的评价数据集由一系列中国法律标准化考试和知识竞赛的单项和多项选择题组成，并根据内容复杂性和演绎难度，将问题分为困难、中等和简单三个层次。它可以提供一个更具挑战性和可靠的方法来衡量模型是否可以利用其知识来推理正确的答案。我们通过一系列[正则表达式](./eval/src/eval.py#L5)来匹配模型回复中所选择的选项，并将其与标准答案比对，最终通过计算模型回答争取的题目的百分比来衡量模型的客观题答题性能。你可以在[这里](./eval/datasets/objective/)查看我们的客观评测集。数据集具体构成如下：
 
 <table>
   <tr>
@@ -377,15 +379,11 @@ torchrun --nproc_per_node 4 src/train_bash.py \
   </tr>
 </table>
 
-**你可以在这里查看我们的[客观评测集](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data/objective_eval)**
-
 ### 主观评测
 
-在主观评测部分，我们采用问答题形式进行评估，模拟主观考试问题的过程。我们从法律咨询、在线论坛、与司法相关的出版物和法律文件中手工构建了一个高质量的测试集。我们用 GPT-3.5 Turbo 作为裁判模型来评估模型的输出，并基于标准答案用准确性、完整性和清晰度这三个标准提供 1-5 的评分。
+在主观评测部分，我们采用问答题形式进行评估，模拟主观考试问题的过程。我们从法律咨询、在线论坛、与司法相关的出版物和法律文件中手工构建了一个高质量的测试集。我们用 GPT-3.5 Turbo 作为裁判模型来评估模型的输出，并基于标准答案用准确性、完整性和清晰度这三个标准提供 1-5 的评分。详见 [ml3m 文档](https://charlie-xiao.github.io/ml3m/modules/ml3m.qa.html#ml3m.qa.QaOpenAIEvaluator)。
 
-主观题数据集从来源于法律咨询、网上发帖、司法相关出版物和法律文书中手动构建的一个高质量的测试集，其中包括 300 个示例，涵盖了法律知识问答、法律咨询和判决预测等场景。
-
-**你可以在这里查看我们的[主观评测集](https://github.com/FudanDISC/DISC-LawLLM/tree/main/eval/data/subjective_eval)**
+主观题数据集从来源于法律咨询、网上发帖、司法相关出版物和法律文书中手动构建的一个高质量的测试集，其中包括 300 个示例，涵盖了法律知识问答、法律咨询和判决预测等场景。你可以在[这里](./eval/datasets/subjective/)查看我们的主观评测集。
 
 ### 评测结果
 
