@@ -22,7 +22,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 
 ## 新闻
 
-**[2023/??/??]** 🎉 我们开源了 DISC-Law-Eval Benchmark 的评测代码，更多详情请在[此处](./eval/README.md)查看。
+**[2023/11/20]** 🎉 我们开源了 DISC-Law-Eval Benchmark 的评测代码，更多详情请在[此处](./eval/README.md)查看。
 
 **[2023/10/19]** 我们开源了 DISC-Law-Eval Benchmark 中的[评测数据集](./eval/datasets/)（包括标准答案）。
 
