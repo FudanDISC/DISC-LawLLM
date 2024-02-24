@@ -7,7 +7,7 @@
 [![Generic badge](https://img.shields.io/badge/🤗-Huggingface%20Repo-green.svg)](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 [![license](https://img.shields.io/github/license/modelscope/modelscope.svg)](./LICENSE)
 
-[Demo](https://law.fudan-disc.com) | [Technical Report](https://arxiv.org/abs/2309.11325)
+[Demo](http://law.fudan-disc.com) | [Technical Report](https://arxiv.org/abs/2309.11325)
 
 </div>
 
