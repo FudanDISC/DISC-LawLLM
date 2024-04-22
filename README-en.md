@@ -18,11 +18,12 @@ We will open-source the following resources in this project:
 * [DISC-LawLLM model weights](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 * [DISC-Law-Eval Benchmark](./eval/)
 
-You can experience our DISC-LawLLM [online](https://law.fudan-disc.com).
+You can experience our DISC-LawLLM [online](http://law.fudan-disc.com).
 
 ## News
+**[2024/03/15] ** 🎉🥳✨ Our paper "LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval" is accepted as a LONG PAPER for the Research Track at DASFAA 2024 (**CCF-B**). ✨
 
-**[2023/??/??]** 🎉 We have open sourced the evaluation scripts of our DISC-Law-Eval Benchmark. You can view more details [here](./eval/README.md).
+**[2023/11/20] ** 🎉 We have open sourced the evaluation scripts of our DISC-Law-Eval Benchmark. You can view more details [here](./eval/README.md).
 
 **[2023/10/19]** We have open sourced the [evaluation datasets](./eval/datasets/) (including reference outputs) of our DISC-Law-Eval Benchmark.
 
