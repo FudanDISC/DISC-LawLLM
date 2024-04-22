@@ -21,6 +21,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
 ## 新闻
+**[2024/03/15]** 🎉🥳✨我们的论文 "LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval" 被 DASFAA 2024 (**CCF-B**) 的 Research Track 录用为长文.✨
 
 **[2023/11/20]** 🎉 我们开源了 DISC-Law-Eval Benchmark 的评测代码，更多详情请在[此处](./eval/README.md)查看。
 
