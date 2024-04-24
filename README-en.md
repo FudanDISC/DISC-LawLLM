@@ -21,9 +21,11 @@ We will open-source the following resources in this project:
 You can experience our DISC-LawLLM [online](http://law.fudan-disc.com).
 
 ## News
-**[2024/03/15] ** 🎉🥳✨ Our paper "LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval" is accepted as a LONG PAPER for the Research Track at DASFAA 2024 (**CCF-B**). ✨
+**[2024/03/15]** 🎉🥳✨ Our paper "LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval" is accepted as a LONG PAPER for the Research Track at DASFAA 2024 (**CCF-B**). ✨
 
-**[2023/11/20] ** 🎉 We have open sourced the evaluation scripts of our DISC-Law-Eval Benchmark. You can view more details [here](./eval/README.md).
+**[2023/12/20]** 🎉 We have evaluated DISC-LawLLM on the latest Benchmark [Lawbench](https://github.com/open-compass/LawBench) ，[Our performance](#model-performance-on-lawbench) is only worse than **GPT-4**, surpassing **GPT3.5** and all other existing LLMs in law domain. 
+
+**[2023/11/20]** 🎉 We have open sourced the evaluation scripts of our DISC-Law-Eval Benchmark. You can view more details [here](./eval/README.md).
 
 **[2023/10/19]** We have open sourced the [evaluation datasets](./eval/datasets/) (including reference outputs) of our DISC-Law-Eval Benchmark.
 
@@ -59,7 +61,7 @@ In addition to these features, we have made the following contributions during o
 * **Comprehensive Chinese legal model evaluation framework and evaluation datasets**
 
 ### Model Performance on Lawbench
-DISC-LawLLM's performance on Lawbench is only worse than GPT-4, surpassing all other existing LLMs in law domain. Below is the average performance (zero-shot and one-shot) of DISC-LawLLM and other LLMs evaluated on LawBench.
+DISC-LawLLM's performance on [Lawbench](https://github.com/open-compass/LawBench) is only worse than GPT-4, surpassing all other existing LLMs in law domain. Below is the average performance (zero-shot and one-shot) of DISC-LawLLM and other LLMs evaluated on LawBench.
 
 #### Zero-shot Performance
 ![lawbench1](https://github.com/FudanDISC/DISC-LawLLM/assets/82264449/50600757-262a-4acb-9873-a867f03c42d8)
