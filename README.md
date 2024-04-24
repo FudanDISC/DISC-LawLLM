@@ -59,6 +59,7 @@ DISC-LawLLM 是一个具有法律推理和知识检索能力的智能法律系�
 * **高质量的训练数据集和普遍有效的训练范式**
 * **完备的法律模型测评框架和测评数据集**
 
+
 ### 模型在Lawbench上的测试结果
 DISC-LawLLM在[Lawbench](https://github.com/open-compass/LawBench)上的评测结果仅次于GPT-4，超出了目前所有的法律大模型。以下是DISC-LawLLM和其他模型在Lawbench上Zero-shot、One-shot的平均分数排序：
 #### Zero-shot 性能
