@@ -58,6 +58,16 @@ In addition to these features, we have made the following contributions during o
 * **High-Quality training datasets and universally effective training paradigms**
 * **Comprehensive Chinese legal model evaluation framework and evaluation datasets**
 
+### Model Performance on Lawbench
+DISC-LawLLM's performance on Lawbench is only worse than GPT-4, surpassing all other existing LLMs in law domain. Below is the average performance (zero-shot and one-shot) of DISC-LawLLM and other LLMs evaluated on LawBench.
+
+#### Zero-shot Performance
+![lawbench1](https://github.com/FudanDISC/DISC-LawLLM/assets/82264449/50600757-262a-4acb-9873-a867f03c42d8)
+
+#### One-shot Performance
+![lawbench2](https://github.com/FudanDISC/DISC-LawLLM/assets/82264449/f0d0c945-ab39-48a2-a452-7489885c968a)
+
+
 ### Demonstration
 
 #### Legal consultation
