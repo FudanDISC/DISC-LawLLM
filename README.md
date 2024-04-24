@@ -23,6 +23,8 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 ## 新闻
 **[2024/03/15]** 🎉🥳✨我们的论文 “LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval” 被 DASFAA 2024 (**CCF-B**) 的 Research Track 录用为长文.✨
 
+**[2023/12/20]** 🎉 我们在最新的法律评测Benchmark [Lawbench](https://github.com/open-compass/LawBench) 上的评测了DISC-LawLLM，[结果](#模型在lawbench上的测试结果)仅次于**GPT-4**，超出了**GPT3.5**和目前所有的法律大模型。
+
 **[2023/11/20]** 🎉 我们开源了 DISC-Law-Eval Benchmark 的评测代码，更多详情请在[此处](./eval/README.md)查看。
 
 **[2023/10/19]** 我们开源了 DISC-Law-Eval Benchmark 中的[评测数据集](./eval/datasets/)（包括标准答案）。
