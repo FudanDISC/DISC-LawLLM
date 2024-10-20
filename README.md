@@ -14,13 +14,15 @@ ZH | [EN](./README-en.md)
 DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服务**的法律领域大模型，由[复旦大学数据智能与社会计算实验室 (Fudan-DISC)](http://fudan-disc.com) 开发并开源。
 
 我们将在该项目中开源如下资源：
-* [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（不包括法律问答部分）
+* [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)
 * [DISC-LawLLM 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 * [DISC-Law-Eval Benchmark](./eval/)
 
 您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
 ## 新闻
+**[2024/10/15]** 🎉 我们开源了DISC-Law-SFT 数据集中的[法律问答部分](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（DISC-Law-SFT-Pair-QA-released.jsonl和DISC-Law-SFT-Triplet-QA-released.jsonl）
+
 **[2024/03/15]** 🎉🥳✨我们的论文 “LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval” 被 DASFAA 2024 (**CCF-B**) 的 Research Track 录用为长文.✨
 
 **[2023/12/20]** 🎉 我们在最新的法律评测Benchmark [Lawbench](https://github.com/open-compass/LawBench) 上的评测了DISC-LawLLM，[结果](#模型在lawbench上的测试结果)仅次于**GPT-4**，超出了**GPT3.5**和目前所有的法律大模型。
