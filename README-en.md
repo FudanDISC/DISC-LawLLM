@@ -14,13 +14,15 @@
 DISC-LawLLM is a large language model specialized in Chinese legal domain, developed and open-sourced by [Fudan University Data Intelligence and Social Computing Lab (Fudan-DISC)](http://fudan-disc.com), to provide comprehensive intelligent legal services.
 
 We will open-source the following resources in this project:
-* [DISC-Law-SFT dataset](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT) (excluding Q&A data)
+* [DISC-Law-SFT dataset](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT) 
 * [DISC-LawLLM model weights](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 * [DISC-Law-Eval Benchmark](./eval/)
 
 You can experience our DISC-LawLLM [online](http://law.fudan-disc.com).
 
 ## News
+**[2024/10/15]** 🎉 we released DISC-Law-SFT's [legal Q&A part](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（DISC-Law-SFT-Pair-QA-released.jsonl and DISC-Law-SFT-Triplet-QA-released.jsonl）
+
 **[2024/03/15]** 🎉🥳✨ Our paper "LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval" is accepted as a LONG PAPER for the Research Track at DASFAA 2024 (**CCF-B**). ✨
 
 **[2023/12/20]** 🎉 We have evaluated DISC-LawLLM on the latest Benchmark [Lawbench](https://github.com/open-compass/LawBench) ，[Our performance](#model-performance-on-lawbench) is only worse than **GPT-4**, surpassing **GPT3.5** and all other existing LLMs in law domain. 
