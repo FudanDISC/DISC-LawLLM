@@ -23,7 +23,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 ## 新闻
 **[2024/10/15]** 🎉 我们开源了DISC-Law-SFT 数据集中的[法律问答部分](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（DISC-Law-SFT-Pair-QA-released.jsonl和DISC-Law-SFT-Triplet-QA-released.jsonl）
 
-**[2024/03/15]** 🎉🥳✨我们的论文 “LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval” 被 DASFAA 2024 (**CCF-B**) 的 Research Track 录用为长文.✨
+**[2024/03/15]** 🎉🥳✨我们的论文 “[LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval](https://link.springer.com/chapter/10.1007/978-981-97-5569-1_19)” 被 DASFAA 2024 (**CCF-B**) 的 Research Track 录用为长文.✨
 
 **[2023/12/20]** 🎉 我们在最新的法律评测Benchmark [Lawbench](https://github.com/open-compass/LawBench) 上的评测了DISC-LawLLM，[结果](#模型在lawbench上的测试结果)仅次于**GPT-4**，超出了**GPT3.5**和目前所有的法律大模型。
 
@@ -448,6 +448,15 @@ DISC-LawLLM 有着目前大语言模型尚无法克服的问题和缺陷，尽�
 如果我们的项目对您的研究和工作有帮助，请如下引用我们的项目：
 
 ```
+@misc{yue2023disclawllm,
+    title={DISC-LawLLM: Fine-tuning Large Language Models for Intelligent Legal Services}, 
+    author={Shengbin Yue and Wei Chen and Siyuan Wang and Bingxuan Li and Chenchen Shen and Shujun Liu and Yuxuan Zhou and Yao Xiao and Song Yun and Xuanjing Huang and Zhongyu Wei},
+    year={2023},
+    eprint={2309.11325},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+
 @misc{yue2023disclawllm,
     title={DISC-LawLLM: Fine-tuning Large Language Models for Intelligent Legal Services}, 
     author={Shengbin Yue and Wei Chen and Siyuan Wang and Bingxuan Li and Chenchen Shen and Shujun Liu and Yuxuan Zhou and Yao Xiao and Song Yun and Xuanjing Huang and Zhongyu Wei},
