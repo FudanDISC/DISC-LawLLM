@@ -23,7 +23,7 @@ You can experience our DISC-LawLLM [online](http://law.fudan-disc.com).
 ## News
 **[2024/10/15]** 🎉 we released DISC-Law-SFT's [legal Q&A part](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（DISC-Law-SFT-Pair-QA-released.jsonl and DISC-Law-SFT-Triplet-QA-released.jsonl）
 
-**[2024/03/15]** 🎉🥳✨ Our paper "LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval" is accepted as a LONG PAPER for the Research Track at DASFAA 2024 (**CCF-B**). ✨
+**[2024/03/15]** 🎉🥳✨ Our paper "[LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval](https://link.springer.com/chapter/10.1007/978-981-97-5569-1_19)" is accepted as a LONG PAPER for the Research Track at DASFAA 2024 (**CCF-B**). ✨
 
 **[2023/12/20]** 🎉 We have evaluated DISC-LawLLM on the latest Benchmark [Lawbench](https://github.com/open-compass/LawBench) ，[Our performance](#model-performance-on-lawbench) is only worse than **GPT-4**, surpassing **GPT3.5** and all other existing LLMs in law domain. 
 
@@ -463,6 +463,15 @@ If our project has been helpful for your research and work, please kindly cite o
     eprint={2309.11325},
     archivePrefix={arXiv},
     primaryClass={cs.CL}
+}
+
+@inproceedings{yue2024lawllm,
+  title={LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval},
+  author={Yue, Shengbin and Liu, Shujun and Zhou, Yuxuan and Shen, Chenchen and Wang, Siyuan and Xiao, Yao and Li, Bingxuan and Song, Yun and Shen, Xiaoyu and Chen, Wei and others},
+  booktitle={International Conference on Database Systems for Advanced Applications},
+  pages={304--321},
+  year={2024},
+  organization={Springer}
 }
 ```
 
