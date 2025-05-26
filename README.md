@@ -241,8 +241,8 @@ streamlit run web_demo.py --server.port 8888
 此外，目前版本的 DISC-LawLLM 是以 Baichuan-13B 作为基座的，您可以参照 [Baichuan-13B](https://github.com/baichuan-inc/Baichuan-13B) 的介绍来进行 int8 或 int4 量化推理部署以及 CPU 部署。
 
 ### DISC-LawLLM-7B
-由于DISC-LawLLM-13B模型基于baichuan基座训练，对新版本transformer和vllm不友好，我们推出了基于Qwen2.5-instruct 7B全量微调的 **LawLLM-7B**，其推理速度更快，方便开发人员使用。
-在这里我们提供基于VLLM的推理方法，详细可以参考[huggface页面](https://huggingface.co/ShengbinYue/LawLLM-Qwen2.5-7B)。
+由于DISC-LawLLM-13B模型基于baichuan基座训练，对新版本transformer和vllm不友好，我们推出了基于[Qwen2.5-instruct 7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct)全量微调的 **LawLLM-7B**，其推理速度更快，方便开发人员使用。
+在这里我们提供基于VLLM的推理方法，详细可以参考[huggface页面](https://huggingface.co/ShengbinYue/LawLLM-7B)。
 ```
 pip install vllm
 ```
