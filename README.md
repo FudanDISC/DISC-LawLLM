@@ -22,7 +22,7 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
 ## 新闻
-**[2024/10/15]** 🎉 由于新版transformer不支持Baichun，我们在8卡A100上全量微调了基于Qwen2.5-instruct 7B的 [**LawLLM-7B**](https://huggingface.co/ShengbinYue/LawLLM-7B)
+**[2025/05/20]** 🎉 由于新版transformer不支持Baichun，我们在8卡A100上全量微调了基于Qwen2.5-instruct 7B的 [**LawLLM-7B**](https://huggingface.co/ShengbinYue/LawLLM-7B)
 
 **[2024/10/15]** 🎉 我们开源了DISC-Law-SFT 数据集中的[法律问答部分](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（DISC-Law-SFT-Pair-QA-released.jsonl和DISC-Law-SFT-Triplet-QA-released.jsonl）
 
