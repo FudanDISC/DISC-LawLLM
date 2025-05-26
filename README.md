@@ -295,7 +295,7 @@ for output in outputs:
 我们给出**全量**和 **LoRA** 两种微调示例。
 ### 全量微调
 
-我们在 8 * Nvidia A800 80 GB + deepspeed 的环境下进行了全量微调测试。使用 [lawllm_full_sft.yaml](https://github.com/FudanDISC/DISC-LawLLM/blob/main/lawllm_full_sft.yaml)，训练启动脚本示例如下：
+我们在 8 * Nvidia A100 80 GB 的环境下进行了全量微调测试。使用 [lawllm_full_sft.yaml](https://github.com/FudanDISC/DISC-LawLLM/blob/main/lawllm_full_sft.yaml)，训练启动脚本示例如下：
 
 ```
 llamafactory-cli train lawllm_full_sft.yaml
@@ -304,7 +304,7 @@ llamafactory-cli train lawllm_full_sft.yaml
 
 ### LoRA 微调
 
-我们在 4 * Nvidia A800 80G 显卡上进行了 LoRA 微调测试。使用 [lawllm_lora_sft.yaml](https://github.com/FudanDISC/DISC-LawLLM/blob/main/lawllm_lora_sft.yaml)，训练启动脚本示例如下：
+我们在 4 * Nvidia A100 80G 显卡上进行了 LoRA 微调测试。使用 [lawllm_lora_sft.yaml](https://github.com/FudanDISC/DISC-LawLLM/blob/main/lawllm_lora_sft.yaml)，训练启动脚本示例如下：
 
 ```
 llamafactory-cli train lawllm_lora_sft.yaml
