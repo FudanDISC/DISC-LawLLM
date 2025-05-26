@@ -15,12 +15,15 @@ DISC-LawLLM 是一个旨在为用户提供专业、智能、全面的**法律服
 
 我们将在该项目中开源如下资源：
 * [DISC-Law-SFT 数据集](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)
-* [DISC-LawLLM 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM)
+* [DISC-LawLLM-7B 模型权重](https://huggingface.co/ShengbinYue/LawLLM-7B) 
+* [DISC-LawLLM-13B 模型权重](https://huggingface.co/ShengbinYue/DISC-LawLLM) 
 * [DISC-Law-Eval Benchmark](./eval/)
 
 您可以通过访问这个[链接](https://law.fudan-disc.com)来在线体验我们的 DISC-LawLLM。
 
 ## 新闻
+**[2024/10/15]** 🎉 由于新版transformer不支持Baichun，我们在8卡A100上全量微调了基于Qwen2.5-instruct 7B的 [**LawLLM-7B**](https://huggingface.co/ShengbinYue/LawLLM-7B)
+
 **[2024/10/15]** 🎉 我们开源了DISC-Law-SFT 数据集中的[法律问答部分](https://huggingface.co/datasets/ShengbinYue/DISC-Law-SFT)（DISC-Law-SFT-Pair-QA-released.jsonl和DISC-Law-SFT-Triplet-QA-released.jsonl）
 
 **[2024/03/15]** 🎉🥳✨我们的论文 “[LawLLM: Intelligent Legal System with Legal Reasoning and Verifiable Retrieval](https://link.springer.com/chapter/10.1007/978-981-97-5569-1_19)” 被 DASFAA 2024 (**CCF-B**) 的 Research Track 录用为长文.✨
@@ -192,9 +195,9 @@ DISC-LawLLM在[Lawbench](https://github.com/open-compass/LawBench)上的评测�
 在未来，我们会增加更加丰富的知识库。我们还将进一步深入探索检索增强的 DISC-LawLLM，包括但不限于检索器与 LLM 的联合训练机制，各位有兴趣可以与我们一起交流。
 
 ## 推理和部署
-
+### DISC-LawLLM 13B
 开源版本的 DISC-LawLLM 是基于 [Baichuan-13B-Base](https://github.com/baichuan-inc/Baichuan-13B) 进行微调训练得到的。您可以直接从 [Hugging Face](https://huggingface.co/ShengbinYue/DISC-LawLLM) 上下载我们的模型权重，或者根据下面的代码样例自动获取。推理前请安装依赖：
-
+⚠️注意transformer版本使用**4.29.1**
 ```
 pip install -r requirements.txt
 ```
@@ -221,13 +224,13 @@ messages = [
 response = model.chat(tokenizer, messages)
 ```
 
-### 命令行工具
+#### 命令行工具
 
 ```
 python cli_demo.py
 ```
 
-### 网页 Demo
+#### 网页 Demo
 
 依靠 streamlit 工具运行以下命令，会在本地启动一个 web 服务，把控制台给出的地址输入浏览器即可访问：
 
@@ -237,103 +240,78 @@ streamlit run web_demo.py --server.port 8888
 
 此外，目前版本的 DISC-LawLLM 是以 Baichuan-13B 作为基座的，您可以参照 [Baichuan-13B](https://github.com/baichuan-inc/Baichuan-13B) 的介绍来进行 int8 或 int4 量化推理部署以及 CPU 部署。
 
+### DISC-LawLLM-7B
+由于DISC-LawLLM-13B模型基于baichuan基座训练，对新版本transformer和vllm不友好，我们推出了基于Qwen2.5-instruct 7B全量微调的 **LawLLM-7B**，其推理速度更快，方便开发人员使用。
+在这里我们提供基于VLLM的推理方法，详细可以参考[huggface页面](https://huggingface.co/ShengbinYue/LawLLM-Qwen2.5-7B)。
+```
+pip install vllm
+```
+推理代码如下
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from vllm import LLM, SamplingParams
+
+model_name ='ShengbinYue/LawLLM-7B'
+
+sampling_params = SamplingParams(
+    temperature=0.1,
+    top_p=0.9,
+    top_k=50,
+    max_tokens=4096
+)
+llm = LLM(model=model_name)
+
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+prompt =  "生产销售假冒伪劣商品罪如何判刑？"
+
+# prompt = "戴罪立功是什么意思"
+messages = [
+    {"role": "system", "content": "你是LawLLM，一个由复旦大学DISC实验室创造的法律助手。"},
+    {"role": "user", "content": prompt}
+]
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+
+outputs = llm.generate([text], sampling_params)
+for output in outputs:
+    prompt = output.prompt
+    generated_text = output.outputs[0].text
+    print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
+```
+
+
 ## 模型微调
 
-开发者可以对 DISC-LawLLM 进行微调使用。在此可以参照与 DISC-LawLLM 兼容的微调工具 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 或是我们的 [DISC-MedLLM](https://github.com/FudanDISC/DISC-MedLLM) 医疗大模型。我们以 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 为例给出**全量**和 **LoRA** 两种微调示例。
+开发者可以对 DISC-LawLLM 13B或7B 进行微调使用。在此可以参照与 DISC-LawLLM 兼容的微调工具 [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)。
 
-首先，下载 [LLaMA Efficient Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) 并按其要求[安装依赖](https://github.com/hiyouga/LLaMA-Efficient-Tuning#getting-started)。注意训练数据按照项目中的要求进行处理。下面我们给出两种微调场景下的脚本样例。
+- 首先，下载[LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)。
+- 按其要求[安装依赖](https://github.com/hiyouga/LLaMA-Factory?tab=readme-ov-file#getting-started)。
+- 按照要求，将数据处理成对应格式，参考[Data](https://github.com/hiyouga/LLaMA-Factory/tree/main/data)。
+- 开始训练
 
+我们给出**全量**和 **LoRA** 两种微调示例。
 ### 全量微调
 
-我们在 8 * Nvidia A800 80 GB + deepspeed 的环境下进行了全量微调测试。训练启动脚本示例如下：
+我们在 8 * Nvidia A800 80 GB + deepspeed 的环境下进行了全量微调测试。使用 [lawllm_full_sft.yaml]()，训练启动脚本示例如下：
 
 ```
-deepspeed --num_gpus=8 src/train_bash.py \
-    --stage sft \
-    --model_name_or_path S heng bin \
-    --do_train \
-    --dataset alpaca_gpt4_zh \
-    --template baichuan \
-    --finetuning_type full \
-    --output_dir path_to_your_sft_checkpoint \
-    --overwrite_cache \
-    --per_device_train_batch_size 4 \ 
-    --per_device_eval_batch_size 4 \ 
-    --gradient_accumulation_steps 8 \ 
-    --preprocessing_num_workers 8 \
-    --lr_scheduler_type cosine \
-    --logging_steps 10 \
-    --save_steps 100 \
-    --eval_steps 100 \
-    --learning_rate 5e-5 \
-    --max_grad_norm 0.5 \
-    --num_train_epochs 2.0 \
-    --dev_ratio 0.01 \
-    --evaluation_strategy steps \
-    --load_best_model_at_end \
-    --plot_loss \
-    --fp16 \
-    --deepspeed deepspeed.json
+llamafactory-cli train lawllm_full_sft.yaml
 ```
 
-`deep_speed.json` 配置示例如下：
-
-```json
-{
-    "train_micro_batch_size_per_gpu": "auto",
-    "zero_allow_untested_optimizer": true,
-    "fp16": {
-        "enabled": "auto",
-        "loss_scale": 0,
-        "initial_scale_power": 16, 
-        "loss_scale_window": 1000,
-        "hysteresis": 2,
-        "min_loss_scale": 1
-    },  
-    "zero_optimization": {
-        "stage": 2,
-        "allgather_partitions": true,
-        "allgather_bucket_size": 5e8,
-        "overlap_comm": false,
-        "reduce_scatter": true,
-        "reduce_bucket_size": 5e8,
-        "contiguous_gradients" : true
-    }
-}
-```
 
 ### LoRA 微调
 
-我们在 4 * Nvidia A800 80G 显卡上进行了 LoRA 微调测试。训练启动脚本示例如下：
+我们在 4 * Nvidia A800 80G 显卡上进行了 LoRA 微调测试。使用 [lawllm_lora_sft.yaml]()，训练启动脚本示例如下：
 
 ```
-torchrun --nproc_per_node 4 src/train_bash.py \
-    --stage sft \
-    --model_name_or_path ShengbinYue/DISC-LawLLM \
-    --do_train \
-    --dataset alpaca_gpt4_zh \
-    --template baichuan \
-    --finetuning_type lora \
-    --lora_rank 8 \ 
-    --lora_target W_pack \
-    --output_dir path_to_your_sft_checkpoint \
-    --overwrite_cache \
-    --per_device_train_batch_size 4 \ 
-    --per_device_eval_batch_size 4 \ 
-    --gradient_accumulation_steps 8 \ 
-    --preprocessing_num_workers 16 \
-    --lr_scheduler_type cosine \
-    --logging_steps 10 \
-    --save_steps 100 \
-    --eval_steps 100 \
-    --learning_rate 1e-5 \
-    --max_grad_norm 0.5 \
-    --num_train_epochs 2.0 \
-    --dev_ratio 0.01 \
-    --evaluation_strategy steps \
-    --load_best_model_at_end \
-    --plot_loss \
-    --fp16
+llamafactory-cli train lawllm_lora_sft.yaml
+```
+使用 [lawllm_merge_lora.yaml]()，lora 合并脚本如下：
+```
+llamafactory-cli export lawllm_merge_lora.yaml
 ```
 
 ## DISC-Law-Eval-Benchmark
