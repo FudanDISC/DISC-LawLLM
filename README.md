@@ -7,7 +7,7 @@ ZH | [EN](./README-en.md)
 [![Generic badge](https://img.shields.io/badge/🤗-Huggingface%20Repo-green.svg)](https://huggingface.co/ShengbinYue/DISC-LawLLM)
 [![license](https://img.shields.io/github/license/modelscope/modelscope.svg)](./LICENSE)
 
-[Demo](http://law.fudan-disc.com) | [技术报告](https://arxiv.org/abs/2309.11325)
+[Demo](http://law.fudan-disc.com) | [技术报告](https://arxiv.org/abs/2309.11325) | [论文](https://link.springer.com/chapter/10.1007/978-981-97-5569-1_19)
 
 </div>
 
