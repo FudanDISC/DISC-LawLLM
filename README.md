@@ -285,7 +285,7 @@ for output in outputs:
 
 ## 模型微调
 
-开发者可以对 DISC-LawLLM 13B或7B 进行微调使用。在此可以参照与 DISC-LawLLM 兼容的微调工具 [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)。
+开发者可以对 DISC-LawLLM 13B 或 7B 进行微调使用。在此可以参照与 DISC-LawLLM 兼容的微调工具 [LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)。
 
 - 首先，下载[LLaMA Factory](https://github.com/hiyouga/LLaMA-Factory)。
 - 按其要求[安装依赖](https://github.com/hiyouga/LLaMA-Factory?tab=readme-ov-file#getting-started)。
