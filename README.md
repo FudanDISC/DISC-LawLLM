@@ -264,7 +264,6 @@ llm = LLM(model=model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 prompt =  "生产销售假冒伪劣商品罪如何判刑？"
 
-# prompt = "戴罪立功是什么意思"
 messages = [
     {"role": "system", "content": "你是LawLLM，一个由复旦大学DISC实验室创造的法律助手。"},
     {"role": "user", "content": prompt}
