@@ -317,6 +317,23 @@ llamafactory-cli export lawllm_merge_lora.yaml
 
 受司法考试构成的启发，我们开发了一个公平的评估框架 —— DISC-Law-Eval Benchmark，从客观和主观两个角度对法律大语言模型的性能进行评估，以考察模型在中国法律领域的性能。您可以点击在[这里](./eval/README.md)查看 DISC-Law-Eval Benchmark 的更多详情。我们还开发了名为 [ml3m](https://github.com/Charlie-XIAO/ml3m) 的 Python 套件，取自 **M**ultilevel **L**egal **LLM**。您可以在[这里](https://charlie-xiao.github.io/)查看其技术文档。
 
+### 支持的云端模型
+
+评测框架除支持本地模型外，还支持以下云端 LLM API 进行对比评测：
+
+| 提供商 | 模型 | 环境变量 |
+|:---:|:---:|:---:|
+| OpenAI | GPT-3.5-turbo, GPT-4 | `openai.json` 配置文件 |
+| [MiniMax](https://platform.minimaxi.com/) | MiniMax-M2.7, MiniMax-M2.7-highspeed, MiniMax-M2.5, MiniMax-M2.5-highspeed | `MINIMAX_API_KEY` |
+
+使用 MiniMax 模型进行评测：
+
+```bash
+export MINIMAX_API_KEY="your-api-key"
+cd eval/src
+python main.py --model_name minimax-m2.7 --tasks mcq_sing mcq_mult qa
+```
+
 ### 客观评测
 
 为了客观、定量地评估智能法律系统的法律知识和推理能力，客观的评价数据集由一系列中国法律标准化考试和知识竞赛的单项和多项选择题组成，并根据内容复杂性和演绎难度，将问题分为困难、中等和简单三个层次。它可以提供一个更具挑战性和可靠的方法来衡量模型是否可以利用其知识来推理正确的答案。我们通过一系列[正则表达式](./eval/src/eval.py#L5)来匹配模型回复中所选择的选项，并将其与标准答案比对，最终通过计算模型回答争取的题目的百分比来衡量模型的客观题答题性能。你可以在[这里](./eval/datasets/objective/)查看我们的客观评测集。数据集具体构成如下：

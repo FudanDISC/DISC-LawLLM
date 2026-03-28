@@ -345,6 +345,23 @@ torchrun --nproc_per_node 4 src/train_bash.py \
 
 Inspired by the composition of judicial examinations, we developed a fair and comprehensive evaluation framework called DISC-Law-Eval Benchmark. This framework assesses the performance of LLMs in Chinese legal domain from both objective and subjective perspectives. More details about our DISC-Law-Eval Benchmark is available [here](./eval/README-en.md). We have also a Python package for **M**ultilevel **L**egal **LLM** called [ml3m](https://github.com/Charlie-XIAO/ml3m) with documentation available [here](https://charlie-xiao.github.io/ml3m/).
 
+### Supported Cloud Models
+
+In addition to local models, the evaluation framework supports the following cloud LLM APIs for comparative evaluation:
+
+| Provider | Models | Configuration |
+|:---:|:---:|:---:|
+| OpenAI | GPT-3.5-turbo, GPT-4 | `openai.json` config file |
+| [MiniMax](https://platform.minimaxi.com/) | MiniMax-M2.7, MiniMax-M2.7-highspeed, MiniMax-M2.5, MiniMax-M2.5-highspeed | `MINIMAX_API_KEY` env var |
+
+To evaluate with MiniMax models:
+
+```bash
+export MINIMAX_API_KEY="your-api-key"
+cd eval/src
+python main.py --model_name minimax-m2.7 --tasks mcq_sing mcq_mult qa
+```
+
 ### Objective Evaluation
 
 *Note: Throughout this project, we will use the term "single-choice question" to represent "multiple choice question with single correct option", and the term "multiple-choice question" to represent only "multiple-choice question with more than one correct options".*

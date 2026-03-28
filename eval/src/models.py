@@ -213,6 +213,74 @@ class GPTModel(BaseModel):
         return self._process_completion(completion)
 
 
+class MiniMaxModel(BaseModel):
+    """MiniMax cloud LLM via OpenAI-compatible API.
+
+    MiniMax-M2.7 : MiniMax-M2.7 (1M context)
+        https://platform.minimaxi.com/document/models
+    MiniMax-M2.5 : MiniMax-M2.5 (204K context)
+        https://platform.minimaxi.com/document/models
+
+    Requires the MINIMAX_API_KEY environment variable to be set.
+    """
+
+    SUPPORTED_MODELS = [
+        "MiniMax-M2.7",
+        "MiniMax-M2.7-highspeed",
+        "MiniMax-M2.5",
+        "MiniMax-M2.5-highspeed",
+    ]
+
+    def __init__(self, ver="MiniMax-M2.7"):
+        self.ver = ver
+        if self.ver not in self.SUPPORTED_MODELS:
+            raise ValueError(
+                f"Invalid 'ver'; got '{self.ver}'. "
+                f"Supported models: {self.SUPPORTED_MODELS}"
+            )
+
+        api_key = os.environ.get("MINIMAX_API_KEY")
+        if not api_key:
+            raise ValueError(
+                "MiniMaxModel requires the MINIMAX_API_KEY environment variable. "
+                "Get your API key at https://platform.minimaxi.com/"
+            )
+
+        self.client = AsyncOpenAI(
+            api_key=api_key,
+            base_url="https://api.minimax.io/v1",
+        )
+
+    def _format_message(self, query):
+        return [
+            {"role": "system", "content": "你是一名中国法律专家。"},
+            {"role": "user", "content": query},
+        ]
+
+    def _process_completion(self, completion):
+        content = completion.choices[0].message.content
+        # Strip thinking tags that MiniMax M2.5+ may include
+        if content and "<think>" in content:
+            import re as _re
+            content = _re.sub(r"<think>[\s\S]*?</think>\s*", "", content)
+        return content
+
+    def chat(self, query):
+        import asyncio as _asyncio
+        return _asyncio.get_event_loop().run_until_complete(self.achat(query))
+
+    async def achat(self, query):
+        completion = await asyncio.wait_for(
+            self.client.chat.completions.create(
+                model=self.ver,
+                messages=self._format_message(query),
+                temperature=0.1,
+            ),
+            timeout=120,
+        )
+        return self._process_completion(completion)
+
+
 class LaWGPTModel(BaseModel):
     """
     https://github.com/pengxiao-song/LaWGPT
@@ -981,6 +1049,22 @@ MODELS = {
     },
     "lexilaw": {
         "klass": BaseModel,  # TODO
+    },
+    "minimax-m2.7": {
+        "klass": MiniMaxModel,
+        "kwargs": {"ver": "MiniMax-M2.7"},
+    },
+    "minimax-m2.7-highspeed": {
+        "klass": MiniMaxModel,
+        "kwargs": {"ver": "MiniMax-M2.7-highspeed"},
+    },
+    "minimax-m2.5": {
+        "klass": MiniMaxModel,
+        "kwargs": {"ver": "MiniMax-M2.5"},
+    },
+    "minimax-m2.5-highspeed": {
+        "klass": MiniMaxModel,
+        "kwargs": {"ver": "MiniMax-M2.5-highspeed"},
     },
     "llama-2-13b-chat-hf": {
         "klass": LLaMAModel,
