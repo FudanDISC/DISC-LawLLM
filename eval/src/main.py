@@ -11,6 +11,11 @@ from models import MODELS, get_model
 from utils import colored, generate_and_evaluate, get_paths, print_section
 
 
+def _is_api_model(model_name):
+    """Check if a model uses a cloud API (supports async and multiple workers)."""
+    return _is_api_model(model_name) or model_name.startswith("minimax")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluation")
     parser.add_argument(
@@ -109,11 +114,11 @@ if __name__ == "__main__":
                     dataset=dataset,
                     info_func=partial(mcq_info_func, multi=False),
                     query_func=model.achat
-                    if model_name.startswith("gpt")
+                    if _is_api_model(model_name)
                     else model.chat,
                     response_name=f"{model_name}_response",
                     fmt="csv",
-                    n_workers=2 if model_name.startswith("gpt") else 1,
+                    n_workers=2 if _is_api_model(model_name) else 1,
                     verbose=args.verbose,
                 ),
                 evaluator_klasses=[McqRegexEvaluator],
@@ -153,11 +158,11 @@ if __name__ == "__main__":
                     dataset=dataset,
                     info_func=partial(mcq_info_func, multi=True),
                     query_func=model.achat
-                    if model_name.startswith("gpt")
+                    if _is_api_model(model_name)
                     else model.chat,
                     response_name=f"{model_name}_response",
                     fmt="csv",
-                    n_workers=5 if model_name.startswith("gpt") else 1,
+                    n_workers=5 if _is_api_model(model_name) else 1,
                     verbose=args.verbose,
                 ),
                 evaluator_klasses=[McqRegexEvaluator],
@@ -198,11 +203,11 @@ if __name__ == "__main__":
                     dataset=dataset,
                     info_func=qa_info_func,
                     query_func=model.achat
-                    if model_name.startswith("gpt")
+                    if _is_api_model(model_name)
                     else model.chat,
                     response_name=f"{model_name}_response",
                     fmt="json",
-                    n_workers=5 if model_name.startswith("gpt") else 1,
+                    n_workers=5 if _is_api_model(model_name) else 1,
                     verbose=args.verbose,
                 ),
                 evaluator_klasses=[QaOpenaiEvaluator],
